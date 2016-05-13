@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Periodic table element</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+	<script src="jquery-ui/jquery.js"></script>
+	<script src="jquery-ui/jquery-ui.min.js"></script>
+	<style>
+	body {
+		font-size: 18px;
+	}
+	td {
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<h1>Tabla Periodica</h1>
+<table class="table table-bordered table-striped">
+<tr>
+<td class="success">H</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>He</td>
+</tr>
+<tr>
+<td>Li</td>
+<td>Be</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>C</td>
+<td>N</td>
+<td>O</td>
+<td>F</td>
+<td>Ne</td>
+</tr>
+<tr>
+<td>Na</td>
+<td>Mg</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Si</td>
+<td>P</td>
+<td>S</td>
+<td>Cl</td>
+<td>Ar</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Ca</td>
+<td>Sc</td>
+<td>Ti</td>
+<td>V</td>
+<td>Cr</td>
+<td>Mn</td>
+<td>Fe</td>
+<td>Co</td>
+<td>Ni</td>
+<td>Cu</td>
+<td>Zn</td>
+<td>Ga</td>
+<td>Ge</td>
+<td>As</td>
+<td>Se</td>
+<td>Br</td>
+<td>Kr</td>
+</tr>
+<tr>
+<td>Rb</td>
+<td>Sr</td>
+<td>Y</td>
+<td>Zr</td>
+<td>Nb</td>
+<td>Mo</td>
+<td>Tc</td>
+<td>Ru</td>
+<td>Rh</td>
+<td>Pd</td>
+<td>Ag</td>
+<td>Cd</td>
+<td>In</td>
+<td>Sn</td>
+<td>Sb</td>
+<td>Te</td>
+<td>I</td>
+<td>Xe</td>
+</tr>
+<tr>
+<td>Cs</td>
+<td>Ba</td>
+<td></td>
+<td>Hf</td>
+<td>Ta</td>
+<td>W</td>
+<td>Re</td>
+<td>Os</td>
+<td>Ir</td>
+<td>Pt</td>
+<td>Au</td>
+<td>Hg</td>
+<td>Tl</td>
+<td>Pb</td>
+<td>Bi</td>
+<td>Po</td>
+<td>At</td>
+<td>Rn</td>
+</tr>
+<tr>
+<td>Fr</td>
+<td>Ra</td>
+<td></td>
+<td>Rf</td>
+<td>Db</td>
+<td>Sg</td>
+<td>Bh</td>
+<td>Hs</td>
+<td>Mt</td>
+<td>Ds</td>
+<td>Rg</td>
+<td>Cn</td>
+<td>Uut</td>
+<td>Fl</td>
+<td>Uup</td>
+<td>Lv</td>
+<td>Uus</td>
+<td>Uuo</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>La</td>
+<td>Ce</td>
+<td>Pr</td>
+<td>Nd</td>
+<td>Pm</td>
+<td>Sm</td>
+<td>Eu</td>
+<td>Gd</td>
+<td>Tb</td>
+<td>Dy</td>
+<td>Ho</td>
+<td>Er</td>
+<td>Tm</td>
+<td>Yb</td>
+<td>Lu</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Ac</td>
+<td>Th</td>
+<td>Pa</td>
+<td>U</td>
+<td>Np</td>
+<td>Pu</td>
+<td>Am</td>
+<td>Cm</td>
+<td>Bk</td>
+<td>Cf</td>
+<td>Es</td>
+<td>Fm</td>
+<td>Md</td>
+<td>No</td>
+<td>Lr</td>
+</tr>
+</table>
+<table class="table" style="width: 340px !important;">
+<tr>
+	<td>Simbolo:</td>
+	<td class="simb"></td>
+</tr>
+<tr>
+	<td>nombre del elemento:</td>
+	<td class="name"></td>
+</tr>
+<tr>
+	<td>Masa Atomica Relativa:</td>
+	<td class="val"></td>
+</tr>
+</table>
+<script src="table.js"></script>
+<script>
+(function() {
+	var selectElement = document.querySelectorAll('td');
+	for (var i = 0; i < selectElement.length; i++) {
+		selectElement[i].addEventListener('click', function() {
+			var select = this.innerHTML;
+			if (select != '') {
+				Pegar(select, elementos[select].name, elementos[select].value);
+			}
+		});
+	}
+	function Pegar(simbolo, name, val) {
+		document.querySelector(".simb").innerHTML = simbolo;
+		document.querySelector(".name").innerHTML = name;
+		document.querySelector(".val").innerHTML = val;
+	}
+})();
+var cambiar = function(event) {
+	var string = $("#tags").val();
+	var rs = string.charAt(0).toUpperCase() + string.slice(1);
+	$("#tags").val(rs);
+	var i =+ 1;
+	if(i > 2) {
+	 return false;
+	}
+	console.log(i);
+	if(elementos[rs].name) {
+		document.querySelector(".simb").innerHTML = rs;
+		document.querySelector(".name").innerHTML = elementos[rs].name;
+		document.querySelector(".val").innerHTML = elementos[rs].value;
+	}
+}
+</script>
+<input type="text" onkeyup="cambiar(event)" id="tags">
+</body>
+</html>
