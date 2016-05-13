@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Periodic table element</title>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
-	<script src="jquery-ui/jquery.js"></script>
-	<script src="jquery-ui/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<style>
 	body {
 		font-size: 18px;
@@ -233,9 +233,9 @@
 	}
 })();
 var cambiar = function(event) {
-	var string = $("#tags").val();
+	var string = document.querySelector("#tags").value;
 	var rs = string.charAt(0).toUpperCase() + string.slice(1);
-	$("#tags").val(rs);
+	document.querySelector("#tags").value = rs;
 	var i =+ 1;
 	if(i > 2) {
 	 return false;
